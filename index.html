@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atzaka</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="media/Icons/Website_Logo.png">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo" id="logo">
+          <img src="media/Icons/FroggyLogo.png" alt="Logo from Luis">
+        </div>
+        <ul class="navMenu">
+          <li><a href="#contact">.contact()</a></li>
+          <li><a href="#projects">.projects()</a></li>
+          <li><a href="#certs">.certificates()</a></li>
+          <li><a href="#about">.about()</a></li>
+        </ul>  
+      </nav>
+    </header>
+    <section class="landing" id="landing">
+      <pre>
+        <h1 class="great">Hi, my name is Luis </h1>
+        <h1 class="static-titles">I'm a <span class="highlight" id="titles">Hacker</span>... </h1>
+      </pre> 
+    </section>
+    <main>
+      <div class="frogAttack" id="frogAttack"></div>
+      <section id="about" class="about mainSection">
+        <h2>... based in Germany!</h2>
+        <div class="aboutInfo">
+          <div class="aboutPic">
+            <img src="media/me.jpeg" alt="Picture of me">
+          </div>
+          <div class="aboutText">
+            <p>I'm currently studying IT security in a small town called Albstadt in southern Germany in my secound semster. As I grew up I rapidly fell in love with technology and especially computers. 
+            </p>
+            <p>I found my passion for cyber security at my first job after my apprenticeship working as an Administrator and IT Support. From there on I trained my knowlege on TryHackMe.
+              <script src="https://tryhackme.com/badge/536913"></script>
+            </p>
+          </div>
+        </div>
+        <section class="timeline">
+          <div class="container left">
+            <div class="content">
+              <h3>2017</h3>
+              <p>I earned my high school diploma back in 2017 in my high school "<a href="http://www.gymnasium-badkoenigshofen.de" target="_blank" rel="noopener noreferrer">Gymnasium Bad Koenigshofen</a>" in Bad Koenigshofen (Baveria)</p>
+            </div>
+          </div>
+          <div class="container right">
+            <div class="content">
+              <h3>2017 - 2019</h3>
+              <p>After school I started an apprenticeship at <a href="https://www.eplass.com/home.html" target="_blank" rel="noopener noreferrer">EPLASS</a> as a developer and finished my exams at "<a href="https://www.klara-oppenheimer-schule.de" target="_blank" rel="noopener noreferrer">Klara-Oppenheimer Schule</a>" vocational school in Wuerzburg (Baveria)</p>
+            </div>
+          </div>
+          <div class="container left">
+            <div class="content">
+              <h3>2019 - 2022</h3>
+              <p>For my first job I worked at <a href="https://www.madinger.com/en/" target="_blank" rel="noopener noreferrer">Madinger GmbH</a> as an Adminstrator and Level 1-3 IT Support. This was also the time I came in contact with IT security and learned to love it. From there on I challanged myself on sites like <a href="https://www.tryhackme.com" target="_blank" rel="noopener noreferrer">TryHackMe</a> to get more and more knowlege in cyber security</p>
+            </div>
+          </div>
+          <div class="container right">
+            <div class="content">
+              <h3>2022 - currently</h3>
+              <p>I am currently studying IT Security for my bachelor's degree at "<a href="https://www.hs-albsig.de/hochschule/organisation/international-office/information-in-english/" target="_blank" rel="noopener noreferrer">Hochschule Albstadt-Sigmaringen</a>" university. Since my third semseter I also work as a penetration tester for <a href="https://www.mercedes-benz-techinnovation.com/en/mercedes" target="_blank" rel="noopener noreferrer">Mercedes-Benz Techinnovation</a></p>
+            </div> 
+          </div> 
+        </section>
+      </section>
+      <section id="certs" class="certs mainSection">
+        <h2>Certifications Here!!!</h2>
+        <div class="gallery">
+          <article id="cert1" class="certificate">
+            <img src="media/certs/PreSec.png" alt="Cert1">
+            <div class="overlay">
+              <p class="description">Pre security path from TryHackMe, where I reviewed all the basics in every section of IT</p>
+              <div class="obtained">
+                <p>obtained from <a href="https://www.tryhackme.com" target="_blank" rel="noopener noreferrer">TryHackMe</a></p>
+              </div>
+            </div>
+          </article>
+          <article id="cert2" class="certificate">
+            <img src="media/certs/Advent-of-Cyber.png" alt="Cert2">
+            <div class="overlay">
+              <p class="description">Advent of Cyber 2022, where I learned basics of IT security</p>
+              <div class="obtained">
+                <p>obtained from <a href="https://www.tryhackme.com" target="_blank" rel="noopener noreferrer">TryHackMe</a></p>
+              </div>
+            </div>
+          </article>
+          <article id="cert3" class="certificate">
+            <img src="media/certs/Unit_testing.PNG" alt="Cert3">
+            <div class="overlay">
+              <p class="description">certificate for learning unit testing</p>
+              <div class="obtained">
+                <p>obtained from <a href="https://www.andrekraemer.de" target="_blank" rel="noopener noreferrer">Andre Kraemer</a></p>
+              </div>
+            </div>
+          </article>
+          <article id="cert4" class="certificate">
+            <img src="media/certs/Hacking_Hardware.PNG" alt="Cert4">
+            <div class="overlay">
+              <p class="description">Learned diffrent ways to hack hardware at university</p>
+              <div class="obtained">
+                <p>obtained from <a href="https://scheible.it" target="_blank" rel="noopener noreferrer">Tobias Scheible</a></p>
+              </div>
+            </div>
+          </article>
+          <article id="cert5" class="certificate">
+            <img src="media/certs/CompTIA_A+.png" alt="Cert5">
+            <div class="overlay">
+              <p class="description">Certified my basic IT knowlege in different fields</p>
+              <div class="obtained">
+                <p>obtained from <a href="https://www.comptia.org/de/start" target="_blank" rel="noopener noreferrer">CompTIA</a></p>
+              </div>
+            </div>
+          </article>
+          <article id="cert6" class="certificate">
+            <img src="media/certs/CompTIA_Sec+.png" alt="Cert6">
+            <div class="overlay">
+              <p class="description">Certified my advanced IT knowlege in security</p>
+              <div class="obtained">
+                <p>obtained from <a href="https://www.comptia.org/de/start" target="_blank" rel="noopener noreferrer">CompTIA</a></p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="projects" class="projects mainSection">
+        <h2>Some of my current projects</h2>
+        <div class="carousel">
+          <article>
+            <h3>Packet Sniffer</h3>
+            <img src="media/Sniffing.png" alt="Project 1.">
+            <p>Packet sniffers monitor network traffic for suspicious activity. They also capture and analyze data packets that flow between devices within the same network, and monitor packets that are exchanged between networked devices and the internet. Building a packet sniffer is an opportunity to practice networking and programming skills. You can create a simple packet sniffer in Python with a socket module. After configuring your socket module to capture packets from the network, you’ll write Python scripts to extract those captured packets.</p>
+          </article>
+          <article>
+            <h3>Keylogging</h3>
+            <img src="media/keylogging.webp" alt="Project 2.">
+            <p>Keyloggers track each keyboard stroke on a device. While hackers use keyloggers to steal sensitive information, cybersecurity professionals use these applications to surveil user behavior and detect unusual activity. To build a keylogger software, download and install Python’s pynput library. With this library, you’ll be able to monitor keyboard and mouse inputs. You’ll also be able to deliver log keystrokes to a specific location—like an email, server, or local system storage. For a slightly more challenging project, try building a keylogger for a virtual keyboard.</p>
+          </article>
+          <article>
+            <h3>Lost data recovery</h3>
+            <img src="media/Data_recovery.png" alt="Project 3.">
+            <p>Data recovery skills are vital to cyber incident response, as malware can corrupt, destroy, or manipulate data. Ransomware attacks encrypt a victim’s data and demand payment for decrypting the files. Outline a ransomware data recovery procedure to practice data retrieval skills. Focus on restoring the affected systems from a backup. Next, build a plan for using data recovery tools to extract corrupted or deleted data from storage devices.</p>
+          </article>
+          <article>
+            <h3>SQL Injection</h3>
+            <img src="media/sql-injection.jpg" alt="Project4.">
+            <p>SQL injections are attack vectors that use malicious SQL code to manipulate back-end databases. Hackers use SQL injections to access private information and commandeer administrative rights to a database. To practice SQL injection vulnerability remediation, set up a virtual machine by signing up for a free-tier Amazon Web Services account. Then practice executing SQL injection using an authorized educational website. Once you uncover the website’s vulnerabilities, figure out how to fix them by editing the PHP files on your virtual machine. Write up an SQL vulnerability assessment with security recommendations to summarize your findings.</p>
+          </article>
+        </div>
+      </section>
+      <section id="contact" class="contact mainSection">
+        <h2>Feel free to contact me!</h2>
+        <div class="contactForm">
+          <form id="contactMeForm">
+            <div class="input-group">
+              <label for="contactName"><span class="highlight">*</span>name:</label>
+              <input type="text" id="contactName" placeholder="John Doe" required>
+            </div>
+            <div class="input-group">
+              <label for="contactMail"><span class="highlight">*</span>mail:</label>
+              <input type="email" id="contactMail" placeholder="john.doe@example.com" required>
+            </div>
+            <div class="input-group">
+              <label for="contactPhone">phone:</label>
+              <input type="tel" id="contactPhone" placeholder="+49-123-4567890">
+            </div>
+            <div class="input-group">
+              <label for="contactMessage"><span class="highlight">*</span>your message:</label>
+              <textarea id="contactMessage" rows="8" placeholder="Send me a message! ;)" required></textarea>
+            </div>
+            <div class="input-group">
+              <input type="submit" id="submit" value="Send">
+            </div>
+          </form>
+        </div>
+        <h4>Or check my socials :)</h4>
+        <div class="socials">
+          <ul class="socials-list">
+            <li><a href="https://www.linkedin.com/in/luis-karch/" target="_blank" rel="noopener noreferrer"><img src="media/Icons/LinkedIn_Logo.png" alt="LinkedIn"></a></li>
+            <li><a href="https://www.xing.com/profile/Luis_Karch" target="_blank" rel="noopener noreferrer"><img src="media/Icons/Xing_Logo.png" alt="Xing"></a></li>
+            <li><a href="https://github.com/atzaka-git" target="_blank" rel="noopener noreferrer"><img src="media/Icons/GitHub_Logo.png" alt="GitHub"></a></li>
+            <li><a href="https://tryhackme.com/p/atzaka" target="_blank" rel="noopener noreferrer"><img src="media/Icons/THM_Logo.png" alt="TryHackMe"></a></li>
+            <li><a href="https://www.instagram.com/its_atzaka/" target="_blank" rel="noopener noreferrer"><img src="media/Icons/Instagram_Logo.png" alt="Instagram"></a></li>
+            <li><a href="https://www.facebook.com/luis.karch" target="_blank" rel="noopener noreferrer"><div class="shadow"></div><img src="media/Icons/Facebook_Logo.png" alt="Facebook"></a></li>
+          </ul>
+        </div> 
+      </section>
+      <a href="#" class="toTop" id="toTop"><img src="media/Icons/UpArrow_25.png" alt=""></a>
+    </main>
+    <footer>
+      <p>&copy; Luis Karch 2023</p>
+    </footer>
+    <nav>
+      <div class="dynamicMenu" id="dynamicMenu">
+        <div class="dynamicMenuIcon" id="dynamicMenuIcon">
+          <span class="line"></span>
+        </div>
+        <div class="expandMenu">
+          <ul class="menu">
+            <li><a href="#landing">.home()</a></li>
+            <li><a href="#about">.about()</a></li>
+            <li><a href="#certs">.certificates()</a></li>
+            <li><a href="#projects">.projects()</a></li>
+            <li><a href="#contact">.contact()</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </body>
+  <script src="js/main.js"></script>
+</html>

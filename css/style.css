@@ -1,0 +1,783 @@
+/* General */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+    /*colors*/
+    --bg_num: 31, 31, 31;
+    --highlight_num: 230, 35, 6;
+
+    --bg: #1f1f1f;
+    --grey: #232323;
+    --fontcolor: #f0efee;
+    --shadow: rgba(0, 0, 0, 0.7);
+    --orange-red: rgb(230, 35, 6);
+    --red: rgb(196, 4, 4);
+    --bg-red: rgba(24, 3, 0, 0.432);
+
+    --typewriterSpeed: 2s;
+    --typewriterSteps: 19;
+}
+
+body {
+    font-family: 'Anonymous Pro', monospace;
+    background-color: var(--bg);
+    color: var(--fontcolor);
+}
+
+main {
+    padding: 20px 0;
+    background: linear-gradient(to top, var(--bg-red), var(--bg));
+}
+
+.mainSection {
+    margin: 40px 3%;
+    padding: 20px 2%;
+    background-color: rgba(240,239,238,0.05);
+    border-radius: 10px;
+    min-height: 100vh;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3em;
+    padding-bottom: 20px;
+}
+
+h3 {
+    width: 100%;
+    padding-bottom: 20px;
+    text-shadow: 2px 1px var(--orange-red);
+}
+
+h4 {
+    width: 100%;
+    text-align: center;
+    text-shadow: 2px 1px var(--orange-red);
+    padding: 40px 0 20px;
+}
+
+
+.highlight {
+    color: var(--orange-red);
+}
+
+.toTop {
+    background-color: var(--fontcolor);
+    background-color: var(--bg-red);
+    backdrop-filter: blur(2px);
+    position: fixed;
+    bottom: 32px;
+    right: 16px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transition: all .7s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.toTop:hover {
+    background-color: rgba(24, 3, 0, 0.9);
+}
+
+.toTop img {
+    display: block;
+    margin: auto;
+}
+
+.activeToTop {
+    right: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+/*----Frog Attack*/
+.frogAttack {
+    position: fixed;
+    pointer-events: none;
+    width: 100%;
+    height: 1000px;
+    top: 0;
+    left: 0;
+}
+
+.frog {
+    position: fixed;
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+    background-color: var(--orange-red);
+    animation: fall 5s ease forwards;
+    top: 0;
+}
+
+@keyframes fall{
+    to {
+        top: 120%;
+    }
+}
+/*-----------------------NAV------------------------*/
+nav {
+    opacity: 0;
+    animation: appear 0.5s ease 7s forwards;
+}
+
+@keyframes appear {
+    to {
+        opacity: 1;
+    }
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to right bottom, var(--bg-red), var(--orange-red));
+}
+
+.logo {
+    position: relative;
+    height: 60px;
+    float: left;
+    margin-left: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    position: relative;
+    padding: 1px, 3px;
+    height: 80%;
+    width: auto;
+}
+
+.navMenu {
+ height: 100%;
+ list-style-type: none;
+}
+
+.navMenu li {
+    float: right;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navMenu li a{
+    display: block;
+    text-decoration: none;
+    color: var(--fontcolor);
+    font-size: 1.7em;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.navMenu li:hover {
+    text-decoration: underline;
+}
+
+/*--------------Dynamic Menu ---------------*/
+.dynamicMenu {
+    position: fixed;
+    top: 30px;
+    right: 10px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 6px;
+    transition: all .7s;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 213;
+}
+
+.activeDynamicMenu {
+    right: 25px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.dynamicMenu:hover {
+    background-color: rgba(24, 3, 0, 0.9);
+}
+
+.dynamicMenu:hover .dynamicMenuIcon{
+    background-color: rgba(24, 3, 0, 0.9);
+    border-radius: 0 6px 6px 0;
+}
+
+.dynamicMenu:hover .dynamicMenuIcon .line {
+    visibility: hidden;
+}
+
+.dynamicMenu:hover .dynamicMenuIcon .line::before,
+.dynamicMenu:hover .dynamicMenuIcon .line::after {
+    visibility: visible;
+ }
+
+.dynamicMenu:hover .dynamicMenuIcon .line::before {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.dynamicMenu:hover  .dynamicMenuIcon .line::after {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+.dynamicMenu:hover .expandMenu{
+    display: block;
+    background-color: rgba(24, 3, 0, 0.9);
+    border-radius: 6px 0 0 6px;
+}
+
+.expandMenu {
+    display: none;
+    float: left;
+    position: relative;
+    background-color: var(--bg-red);
+    backdrop-filter: blur(5px);
+    border-radius: 20px 0px 20px 20px;
+}
+
+.showMenu {
+    display: block;
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu li a:hover {
+    background-color: var(--orange-red);
+}
+
+.menu li a{
+    display: block;
+    text-decoration: none;
+    color: var(--fontcolor);
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+.dynamicMenuIcon {
+    float: right;
+    background-color: var(--bg-red);
+    backdrop-filter: blur(2px);
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dynamicMenuIcon .line,
+.dynamicMenuIcon .line::before,
+.dynamicMenuIcon .line::after {
+    width: 32px;
+    height: 3px;
+    background-color: var(--fontcolor);
+    border-radius: 10px;
+    position: absolute;
+    transform-origin: center;
+}
+
+.dynamicMenuIcon .line::before {
+    content: '';
+    top: -11px;
+    transition: 1s;
+}
+
+.dynamicMenuIcon .line::after {
+    content: '';
+    top: 11px;
+    transition: 1s;
+}
+/*-------------------Landing--------------------------*/
+.landing {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.great, .static-titles {
+    position: relative;
+    font-size: 5em;
+    width: fit-content;
+}
+
+.great::before,
+.great::after,
+.static-titles::before,
+.static-titles::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.great::before {
+    background: var(--bg);
+    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterSteps)) forwards;
+}
+
+.great::after {
+    width: 0.125em;
+    background: var(--fontcolor);
+    animation: 
+        typewriter var(--typewriterSpeed) steps(var(--typewriterSteps)) forwards,
+        blink 0.85s 3 ease var(--typewriterSpeed) forwards;
+}
+
+
+.static-titles::before {
+    background: var(--bg);
+    animation: typewriter 2s steps(16) 5.9s forwards;
+  }
+
+.static-titles::after {
+    width: 0.125em;
+    background: var(--fontcolor);
+    opacity: 0;
+    animation:
+        show .85s ease 4s forwards,
+        blink .85s 2 ease 4s backwards,
+        typewriter 2s steps(16) 5.9s forwards,
+        blink .85s ease 7.9s infinite;
+}
+
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes show {
+    to {
+        opacity: 1;
+    }
+}
+
+.dynamic-titles{
+    list-style: none;
+    
+}
+
+.dynamic-titles li {
+    display: block;
+    list-style: none;
+    text-decoration: none;
+    color: var(--magenta);
+    font-size: 3em;
+}
+
+/*----------------------ABOUT---------------------------*/
+.aboutInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.aboutText {
+    width: 50%;
+}
+
+.aboutText p{
+    padding-bottom: 20px;
+}
+
+.aboutPic {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutPic img {
+    width: 80%;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 5px 5px var(--shadow);
+}
+.timeline {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto 20px auto;
+}
+
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background: var(--orange-red);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+.container::after{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: var(--fontcolor);
+    border: 4px solid var(--orange-red);
+    border-radius: 50%;
+    top: 15px;
+    z-index: 1;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.right::after {
+    left: -16px;
+}
+
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid var(--bg-red);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--bg-red);
+  }
+
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid var(--bg-red);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--bg-red) transparent transparent;
+}
+
+.content {
+    padding: 20px 30px;
+    background-color: var(--bg-red);
+    position: relative;
+    border-radius: 6px;
+}
+
+.content a {
+    color: var(--fontcolor);
+}
+
+/*--------------------- Certs ------------------------*/
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.certificate {
+    position: relative;
+    width: 28%;
+    max-width: 600px;
+    min-width: 250px;
+    height: 200px;
+    margin : 2%;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 3px 3px var(--shadow);
+}
+
+.certificate img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: auto;
+}
+
+.certificate .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 24px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(var(--bg_num), 0.7);
+    backdrop-filter: blur(2px);
+    display: none;
+}
+
+.certificate .overlay .description {
+    position: absolute;
+    text-align: center;
+    background-color: rgba(var(--bg_num), 0.3);
+    top: 50px;
+}
+
+.certificate .overlay .obtained {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    font-size: 0.8em;
+    background-color: rgba(var(--bg_num), 0.3);
+}
+
+.certificate .overlay .obtained p a {
+    color: var(--fontcolor);
+} 
+
+.certificate:hover .overlay {
+    display: block;
+    border: solid 2px var(--red);
+}
+
+.certificate:hover h3 {
+    opacity: 0;
+}
+/*--------------------- Projects ------------------------*/
+.carousel article{
+    margin: 10px 0 70px 0;
+}
+.carousel article h3{
+    text-align: center;
+}
+
+.carousel article p{
+    margin: 10px 0 10px 0;
+    text-align: center;
+}
+
+.carousel article img {
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    box-shadow: 3px 3px var(--shadow);
+    background-size: cover;
+}
+
+/*----------------------Contact-----------------------*/
+.contact {
+    background-image: url(../media/cyberpunk.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    margin-bottom: 20px;
+
+}
+
+.contactForm {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact form{
+    width: 90%;
+    max-width: 600px;
+}
+
+.input-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.input-group input, textarea {
+    width: 100%; 
+    padding: 10px;
+    outline: 0;
+    border: 1px solid var(--orange-red);
+    background: rgba(var(--bg_num), 0.2);
+    backdrop-filter: blur(5px);
+    color: var(--fontcolor);
+    font-family: inherit;
+}
+
+.input-group textarea {
+    resize: none;
+}
+
+.input-group label {
+    line-height: 1.2em;
+}
+
+.socials {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials-list {    
+    list-style-type: none;
+}
+
+.socials-list li {
+    float: left;
+    padding: 5px;
+}
+
+.socials-list li a{
+    list-style: none;
+}
+
+.socials-list li a img {
+    width: 50px;
+    height: 50px;
+    backdrop-filter: blur(12px);
+    border-radius: 50%;
+    box-shadow: 1px 1px rgba(var(--highlight_num), 0.4);
+}
+
+.socials-list li a img:hover {
+    box-shadow: 2px 2px var(--orange-red);
+}
+/* ----------------- Footer// END ----------------- */
+footer {
+    background-color: var(--bg-red);
+    text-align: end;
+}
+
+footer p {
+    padding-right: 30px;
+    padding-bottom: 10px;
+}
+
+/* ------------------------Responsive----------------- */
+
+@media screen and (max-width: 1007px) {
+    .great, .static-titles {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    /*NAV*/
+    .navMenu li a{
+        font-size: 1.15em;
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .great, .static-titles {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+    /* NAV*/
+    .navbar {
+        background: rgba(0, 0, 0, 0);
+    }
+
+    .logo {
+        top: 30px;
+        left: 30px;
+    }
+
+    .dynamicMenu {
+        right: 25px;
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+    .navMenu {
+        display: none;
+    }
+
+    /*-------------------About--------------*/
+    .aboutInfo {
+        display: block;
+    }
+    .aboutText {
+        width: 100%;
+    }
+
+    .aboutPic {
+        width: 100%;
+    }
+
+    .aboutPic img {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+    
+    .left::after, .right::after {
+        left: 15px;
+    }
+    
+    .right {
+        left: 0%;
+    }
+    
+}
+
+@media screen and (max-width: 300px) {
+    .great, .static-titles {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+}
+
+
